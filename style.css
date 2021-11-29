@@ -24,7 +24,8 @@ p,
 span,
 a,
 label,
-input {
+input,
+footer {
     font-family: Graphik, "Helvetica Neue", Helvetica;
     font-weight: 400;
 }
@@ -43,6 +44,8 @@ body {
 .first {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     flex-grow: 1;
     border-left: 8px solid #FFE01B;
 }
@@ -51,16 +54,15 @@ body {
     width: 38px;
     height: 38px;
     margin: 12px;
+    align-self: flex-start;
 }
 
 /* Form Container */
 
 .form-container {
-    width: 75%;
-    margin: 3rem auto;
+    width: 45%;
     display: flex;
     flex-direction: column;
-    align-self: center;
 }
 
 .form-container header {
@@ -98,10 +100,71 @@ input:focus {
     box-shadow: inset 0 0 0 1px #007c89;
 }
 
+/* Form - Checkbox */
+
 .checkbox-container {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+.checkbox-container label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.checkbox-container a {
+    font-size: 0.9rem;
+    border-bottom: 1px solid;
+}
+
+/* Form - Policy Text */
+
+.policy-text {
+    font-size: 0.9rem;
+}
+
+.policy-text a {
+    font-size: 0.9rem;
+}
+
+/* Form - Signup Button */
+
+.signup {
+    width: fit-content;
+    height: 48px;
+    padding: 0 42px;
+    background: transparent;
+    border: 1px solid #dedddc;
+    border-radius: 2px;
+    color: #dedddc;
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+
+/* Footer */
+
+footer,
+footer a {
+    font-size: 0.75rem;
+    color: rgba(36,28,21,0.65);
+    line-height: 20px;
+}
+
+footer {
+    width: 45%;
+    margin: 48px 0 30px 0;
+}
+
+footer a {
+    text-decoration: underline;
 }
 
 /* Second */
@@ -110,5 +173,59 @@ input:focus {
     width: 35%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #fbeeca;
 }
+
+.title-logos {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logos span {
+    font-size: 35px;
+}
+
+/* Media Queries */
+
+/* Media Queries - Small Desktop */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+    .form-container,
+    footer {
+        width: 75%;
+    }
+    
+  }
+
+/* Media Queries - Mobile & Tablet */
+
+@media (max-width: 1024px) {
+    
+    body {
+        flex-direction: column;
+    }
+
+    .first,
+    .second {
+        width: 100%;
+    }
+
+    .form-container,
+    footer {
+        width: 80%;
+    }
+    
+  }
